@@ -1,0 +1,50 @@
+/* ============================================
+                  MEDIA QUERY
+   ============================================ */
+@mixin mediaQ($breakpoint) {
+  /* 
+   * TABLET: 726px
+   * LAPTOP / DESKTOP: 1024px
+   * LAPTOP / DESKTOP LARGE: 1440px
+   */
+  @if $breakpoint == '>=tablet' {
+    @media (min-width: 45.375em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == '>=desktop' {
+    @media (min-width: 64em) {
+      @content;
+    }
+  }
+}
+
+/* ============================================
+                  CENTER ELEMENT
+   ============================================ */
+@mixin centerElement($tp: 50%, $lt: 50%, $tx: -50%, $ty: -50%, $pos: absolute) {
+  position: $pos;
+  top: $tp;
+  left: $lt;
+  transform: translate($tx, $ty);
+}
+
+/* ============================================
+                  FLEX BOX
+   ============================================ */
+@mixin immaFlex(
+  $dis: flex,
+  $dir: null,
+  $just: null,
+  $align: null,
+  $wrap: null,
+  $flex: null
+) {
+  display: $dis;
+  flex-direction: $dir;
+  justify-content: $just;
+  align-items: $align;
+  flex-wrap: $wrap;
+  flex: $flex;
+}

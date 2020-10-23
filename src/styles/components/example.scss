@@ -1,0 +1,68 @@
+.banner {
+  text-align: center;
+  color: $color__white;
+  background-attachment: fixed;
+  display: block;
+
+  h1 {
+    color: $color__white;
+    width: 100%;
+    @include centerElement();
+
+    span {
+      display: block;
+    }
+
+    span:first-child {
+      font-size: 7.5rem;
+      font-weight: 500;
+      margin-bottom: -1.8rem;
+      @extend %cursive;
+
+      @include mediaQ('>=tablet') {
+        margin-bottom: -3.5rem;
+        font-size: 12rem;
+      }
+    }
+
+    span:last-child {
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-top: -1rem;
+      @extend %mont;
+      @include mediaQ('>=tablet') {
+        letter-spacing: 1.5rem;
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+.banner-others {
+  display: none;
+
+  @include mediaQ('>=tablet') {
+    display: block;
+  }
+}
+
+.intro-layer {
+  position: absolute;
+  top: 0;
+  z-index: 10001;
+  width: 100%;
+  background-color: #000;
+  height: 100vh;
+  text-align: center;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  @extend %mont;
+
+  @include mediaQ('>=tablet') {
+    font-size: 3.2rem;
+  }
+
+  @include immaFlex($align: center, $just: center, $dir: column);
+}
