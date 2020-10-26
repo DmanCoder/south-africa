@@ -156,6 +156,7 @@
     position: absolute;
     left: 1.3rem;
     top: -3rem;
+    transform: rotate(180deg);
   }
   &__title::after {
     content: url('../../assets/icons/quote.svg');

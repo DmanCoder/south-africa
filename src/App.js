@@ -117,6 +117,38 @@ const App = () => {
           culture
         </p>
       </div>
+
+      {/* RECOMMENDATION */}
+      <div className="rec">
+        <div className="twins">
+          <div className="rec__info">
+            <h3 className="rec__title">Horses of Africa</h3>
+            <p className="rec__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              deleniti asperiores nihil minus alias neque illum, ducimus
+              consequuntur ea quo eligendi, odit qui ipsam corporis aperiam
+              tempore nemo doloribus ad!
+            </p>
+            <p className="rec__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              deleniti asperiores nihil minus alias neque illum, ducimus
+              consequuntur ea quo eligendi, odit qui ipsam corporis aperiam
+              tempore nemo doloribus ad! eligendi, odit qui ipsam corporis
+              aperiam tempore nemo doloribus ad!
+            </p>
+
+            <p className="rec__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              deleniti asperiores nihil minus alias neque illum, ducimus
+              consequuntur ea quo eligendi, odit qui ipsam corporis aperiam
+              tempore nemo doloribus ad! deleniti asperiores nihil minus alias
+              neque illum, ducimus consequuntur ea quo eligendi, odit qui ipsam
+              corporis aperiam tempore nemo doloribus ad!
+            </p>
+          </div>
+          <div className="red__img"></div>
+        </div>
+      </div>
     </div>
   );
 };
