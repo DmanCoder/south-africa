@@ -71,6 +71,7 @@
   &__facts {
     font-size: 1.45rem;
     margin-bottom: 2.5rem;
+    color: $color__primary;
 
     span:first-child {
       font-weight: 700;
@@ -88,9 +89,11 @@
     border: none;
     background-color: $color__primary;
     color: rgba(#fff, 0.85);
-    padding: 1.35rem;
+    padding: 1.4rem 3rem;
     margin-bottom: 4rem;
     font-size: 1.45rem;
     cursor: not-allowed;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }
