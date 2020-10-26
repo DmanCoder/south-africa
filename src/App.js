@@ -69,7 +69,7 @@ const App = () => {
             <span>1.993.336</span>
           </p>
 
-          <button className="info__btn"></button>
+          <button className="info__btn">More Facts On Africa</button>
         </div>
       </div>
     </div>
