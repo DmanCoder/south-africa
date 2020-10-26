@@ -1,9 +1,79 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
+import img1 from './assets/imgs/pexels-scott-webb-29049.jpg';
+
+// COMPONENTS
+import TopNav from './components/navigation/topNav';
+
+// AFRICA MAP
+import { ReactComponent as AfricaMap } from './assets/imgs/africa-map.svg';
 
 import './styles/main.scss';
 
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return (
+    <div>
+      <TopNav />
+
+      <div className="banner">
+        {/* ADD VIDEO PLAYER HERE */}
+        <h1>Africa</h1>
+      </div>
+
+      <div className="info">
+        <div className="twins">
+          <h3 className="info__title">
+            Africa is not a Destination. It's an Adventure set in Stunning
+            Scenery.
+          </h3>
+          <h5 className="info__sub-title">
+            Travel to Africa to experience the majesty of nature
+          </h5>
+
+          <p className="info__text">
+            When it comes to incredible scenery, Africa is right up there with
+            the best. Boasting vast savannas, stunning beaches and dramatic
+            mountains, this continent has it all. Throw in epic canyons, sugar
+            plantations and extinct volcanoes, and you've got endless
+            opportunities to explore nature at its finest
+          </p>
+          <p className="info__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem
+            quas soluta dicta excepturi tempora nulla doloribus nemo quo.
+          </p>
+        </div>
+        <div>
+          <AfricaMap />
+          <h4 className="info__quick-facts">
+            Africa, <br /> the quick facts
+          </h4>
+
+          <p className="info__facts">
+            <span>Country Size</span>
+            <span>103,000 sq,km</span>
+          </p>
+          <p className="info__facts">
+            <span>Population (2015)</span>
+            <span>329.100</span>
+          </p>
+          <p className="info__facts">
+            <span>Capital</span>
+            <span>Reykjavik</span>
+          </p>
+          <p className="info__facts">
+            <span>Currency</span>
+            <span>Icelandic Krona (ISK)</span>
+          </p>
+          <p className="info__facts">
+            <span>GDP 32014 (MISK)</span>
+            <span>1.993.336</span>
+          </p>
+
+          <button className="info__btn"></button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default App;

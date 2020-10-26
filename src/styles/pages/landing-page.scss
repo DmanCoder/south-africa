@@ -1,0 +1,86 @@
+/* ============================================
+                  BANNER
+   ============================================ */
+.banner {
+  height: 100vh;
+  background: url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat
+    center / cover;
+
+  font-size: 3.6rem;
+  @include immaFlex($align: center, $just: center);
+
+  h1 {
+    color: #fff;
+  }
+}
+
+/* ============================================
+                  INFO
+   ============================================ */
+.info {
+  margin-top: 6.5rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+  }
+
+  &__sub-title {
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+
+  &__sub-title::after {
+    content: '';
+    background-color: $color__primary;
+    display: block;
+    height: 0.13rem;
+    width: 5rem;
+    margin: 3rem auto 0;
+  }
+
+  &__text {
+    // font-size: 1.3rem;
+    font-size: 1.45rem;
+    margin-bottom: 4rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  &__quick-facts {
+      margin-top: -15rem;
+    font-size: 2.8rem;
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 4rem;
+  }
+
+  &__quick-facts::after {
+    content: '';
+    background-color: $color__primary;
+    display: block;
+    height: 0.05rem;
+    width: 5rem;
+    margin: 3rem auto 0;
+  }
+
+  &__facts {
+    font-size: 1.45rem;
+    margin-bottom: 2.5rem;
+
+    span:first-child {
+      font-weight: 700;
+      text-transform: uppercase;
+      display: block;
+      color: $color__primary;
+    }
+    span:last-child {
+      font-weight: normal;
+      display: block;
+    }
+  }
+}
