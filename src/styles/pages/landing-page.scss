@@ -131,3 +131,44 @@
     padding-right: 1.3rem;
   }
 }
+
+/* ============================================
+                WELCOME
+   ============================================ */
+
+.welcome {
+  margin-top: 12rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 4rem;
+    position: relative;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  &__title::before {
+    content: url('../../assets/icons/quote.svg');
+    display: block;
+    position: absolute;
+    left: 1.3rem;
+    top: -3rem;
+  }
+  &__title::after {
+    content: url('../../assets/icons/quote.svg');
+    display: block;
+    position: absolute;
+    right: 1.3rem;
+    bottom: -3rem;
+  }
+
+  &__text {
+    font-size: 1.45rem;
+    margin-bottom: 4rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+}

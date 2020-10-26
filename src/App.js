@@ -103,6 +103,20 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      {/* WELCOME */}
+      <div className="welcome">
+        <h3 className="welcome__title">
+          Enjoy and Welcome to the World of Africa!
+        </h3>
+
+        <p className="welcome__text">
+          Africa is a country of sharp contrasts. A place where fire and ice
+          co-exist. Where dark winters are offset by the summer's midnight sun.
+          A country where insular existence has spurred a rich and vibrant
+          culture
+        </p>
+      </div>
     </div>
   );
 };
