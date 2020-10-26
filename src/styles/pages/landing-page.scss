@@ -44,7 +44,6 @@
   }
 
   &__text {
-    // font-size: 1.3rem;
     font-size: 1.45rem;
     margin-bottom: 4rem;
     padding-left: 1.3rem;
@@ -95,5 +94,40 @@
     cursor: not-allowed;
     text-transform: uppercase;
     font-weight: 600;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* ============================================
+                REC / RECOMMENDATION
+   ============================================ */
+
+.rec {
+  margin-top: 12rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+  }
+
+  &__title::after {
+    content: '';
+    background-color: $color__primary;
+    display: block;
+    height: 0.13rem;
+    width: 5rem;
+    margin: 3rem auto 0;
+  }
+
+  &__text {
+    font-size: 1.45rem;
+    margin-bottom: 4rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
   }
 }

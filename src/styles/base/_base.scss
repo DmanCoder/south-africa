@@ -10,21 +10,20 @@ html {
   font-size: 62.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
 }
 
-
-
 body {
   box-sizing: border-box;
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.05rem;
   background-color: #fff;
+  color: $color__primary;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @extend %f-open;
 }
 
 p {
-  color: $color__secondary;
   font-weight: 600;
 }
 
@@ -39,11 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color__primary;
   @extend %f-play;
-}
-
-p {
 }
 
 ul,
