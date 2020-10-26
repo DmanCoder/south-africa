@@ -8,6 +8,10 @@
 
 html {
   font-size: 62.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
+
+  @include mediaQ('>=tablet') {
+    font-size: 72.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
+  }
 }
 
 body {

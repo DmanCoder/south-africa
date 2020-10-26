@@ -148,6 +148,11 @@
     position: relative;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+    @include mediaQ('>=tablet') {
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__title::before {
@@ -157,13 +162,23 @@
     left: 1.3rem;
     top: -3rem;
     transform: rotate(180deg);
+
+    @include mediaQ('>=tablet') {
+      left: 3rem;
+      top: -2rem;
+    }
   }
+
   &__title::after {
     content: url('../../assets/icons/quote.svg');
     display: block;
     position: absolute;
     right: 1.3rem;
     bottom: -3rem;
+    @include mediaQ('>=tablet') {
+      right: 9.3rem;
+      bottom: -2rem;
+    }
   }
 
   &__text {
