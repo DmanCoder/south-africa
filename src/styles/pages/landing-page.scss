@@ -34,8 +34,8 @@
   }
 
   @include mediaQ('>=desktop') {
-    margin-right: -10rem;
-    margin-left: -10rem;
+    margin-right: -15rem;
+    margin-left: -15rem;
     margin-top: -10rem;
   }
 }
@@ -44,13 +44,20 @@
                   INFO
    ============================================ */
 .info {
-  margin-top: 6.5rem;
+  margin-top: 20rem;
   text-align: center;
+  @include mediaQ('>=desktop') {
+    text-align: left;
+  }
 
   &__title {
     font-size: 3.2rem;
     font-weight: 900;
     margin-bottom: 4rem;
+
+    @include mediaQ('>=desktop') {
+      font-size: 6.2rem;
+    }
   }
 
   &__sub-title {
@@ -58,6 +65,10 @@
     font-style: italic;
     font-weight: 600;
     margin-bottom: 4rem;
+    @include mediaQ('>=desktop') {
+      font-size: 3.6rem;
+      max-width: 60rem;
+    }
   }
 
   &__sub-title::after {
@@ -67,6 +78,13 @@
     height: 0.13rem;
     width: 5rem;
     margin: 3rem auto 0;
+
+    @include mediaQ('>=desktop') {
+      text-align: left;
+      width: 10rem;
+      margin: 3rem 1rem 0;
+      height: 0.2rem;
+    }
   }
 
   &__text {
@@ -74,6 +92,12 @@
     margin-bottom: 4rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+    @include mediaQ('>=desktop') {
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+      line-height: 3.5rem;
+    }
   }
 
   &__quick-facts {
@@ -82,6 +106,10 @@
     font-style: italic;
     font-weight: 800;
     margin-bottom: 4rem;
+
+    @include mediaQ('>=desktop') {
+      font-size: 4.2rem;
+    }
   }
 
   &__quick-facts::after {
@@ -91,12 +119,23 @@
     height: 0.05rem;
     width: 5rem;
     margin: 3rem auto 0;
+
+    @include mediaQ('>=desktop') {
+      text-align: left;
+      width: 10rem;
+      margin: 3rem 1rem 0;
+      height: 0.2rem;
+    }
   }
 
   &__facts {
     font-size: 1.45rem;
     margin-bottom: 2.5rem;
     color: $color__primary;
+
+    @include mediaQ('>=desktop') {
+      font-size: 2.2rem;
+    }
 
     span:first-child {
       font-weight: 700;
@@ -115,11 +154,16 @@
     background-color: $color__primary;
     color: rgba(#fff, 0.85);
     padding: 1.4rem 3rem;
-    // margin-bottom: 4rem;
     font-size: 1.45rem;
+    opacity: 0.9;
     cursor: not-allowed;
     text-transform: uppercase;
     font-weight: 600;
+
+    @include mediaQ('>=desktop') {
+      font-size: 2rem;
+      padding: 2.4rem 6rem;
+    }
 
     &:focus {
       outline: none;
@@ -133,12 +177,17 @@
 
 .rec {
   margin-top: 20rem;
+  margin-bottom: 20rem;
   text-align: center;
   @include mediaQ('>=desktop') {
     text-align: left;
   }
 
   &__img {
+    background: url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat
+      center / cover;
+  }
+  &__img2 {
     background: url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat
       center / cover;
   }
@@ -175,8 +224,9 @@
     padding-right: 1.3rem;
 
     @include mediaQ('>=desktop') {
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
       line-height: 3.5rem;
     }
   }
@@ -188,7 +238,12 @@
 
 .welcome {
   margin-top: 20rem;
+
   text-align: center;
+  @include mediaQ('>=desktop') {
+    height: 72vh;
+    @include immaFlex($align: center, $just: center, $dir: column);
+  }
 
   &__title {
     font-size: 3.2rem;
@@ -202,6 +257,11 @@
       max-width: 48rem;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @include mediaQ('>=desktop') {
+      max-width: 98rem;
+      font-size: 7.5rem;
     }
   }
 
@@ -247,5 +307,13 @@
     // margin-bottom: 4rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+
+    @include mediaQ('>=desktop') {
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+      max-width: 98rem;
+      line-height: 3.5rem;
+    }
   }
 }
