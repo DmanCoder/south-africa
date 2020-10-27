@@ -6,7 +6,7 @@ import img1 from './assets/imgs/pexels-scott-webb-29049.jpg';
 import Nav from './components/navigation/nav';
 
 // AFRICA MAP
-import { ReactComponent as AfricaMap } from './assets/imgs/africa-map.svg';
+import { ReactComponent as AfricaMap } from './assets/imgs/south-africa.svg';
 
 import './styles/main.scss';
 
@@ -18,24 +18,24 @@ const App = () => {
       <div className="content">
         <div className="banner">
           {/* ADD VIDEO PLAYER HERE */}
-          <h1>Africa</h1>
+          <h1>South Africa</h1>
         </div>
 
         <div className="info">
           <div className="twins">
             <div>
               <h3 className="info__title">
-                Africa is not a Destination. It's an Adventure set in Stunning
-                Scenery.
+                South Africa is not a Destination. It's an Adventure set in
+                Stunning Scenery.
               </h3>
               <h5 className="info__sub-title">
-                Travel to Africa to experience the majesty of nature
+                Travel to South Africa to experience the majesty of nature
               </h5>
 
               <p className="info__text">
-                When it comes to incredible scenery, Africa is right up there
-                with the best. Boasting vast savannas, stunning beaches and
-                dramatic mountains, this continent has it all. Throw in epic
+                When it comes to incredible scenery, South Africa is right up
+                there with the best. Boasting vast savannas, stunning beaches
+                and dramatic mountains, this continent has it all. Throw in epic
                 canyons, sugar plantations and extinct volcanoes, and you've got
                 endless opportunities to explore nature at its finest
               </p>
@@ -49,7 +49,7 @@ const App = () => {
             <div>
               <AfricaMap />
               <h4 className="info__quick-facts">
-                Africa, <br /> the quick facts
+                South Africa, <br /> the quick facts
               </h4>
 
               <p className="info__facts">
@@ -73,7 +73,7 @@ const App = () => {
                 <span>1.993.336</span>
               </p>
 
-              <button className="info__btn">More Facts On Africa</button>
+              <button className="info__btn">More Facts On South Africa</button>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const App = () => {
           <div className="twins">
             <div className="rec__img"></div>
             <div className="rec__info">
-              <h3 className="rec__title">Visit Reykjavik</h3>
+              <h3 className="rec__title">Visit Cape Of Hope</h3>
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
@@ -112,12 +112,12 @@ const App = () => {
         {/* WELCOME */}
         <div className="welcome">
           <h3 className="welcome__title">
-            Enjoy and Welcome to the World of Africa!
+            Enjoy and Welcome to the World of South Africa!
           </h3>
 
           <p className="welcome__text">
-            Africa is a country of sharp contrasts. A place where fire and ice
-            co-exist. Where dark winters are offset by the summer's midnight
+            South Africa is a country of sharp contrasts. A place where fire and
+            ice co-exist. Where dark winters are offset by the summer's midnight
             sun. A country where insular existence has spurred a rich and
             vibrant culture
           </p>
@@ -127,7 +127,7 @@ const App = () => {
         <div className="rec">
           <div className="twins">
             <div className="rec__info">
-              <h3 className="rec__title">Horses of Africa</h3>
+              <h3 className="rec__title">Experience The Safari</h3>
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,

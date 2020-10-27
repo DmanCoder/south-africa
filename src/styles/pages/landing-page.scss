@@ -7,11 +7,6 @@
     width: 80%;
     position: absolute;
     right: 0;
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  @include mediaQ('>=desktop--lg') {
     padding-left: 15rem;
     padding-right: 15rem;
   }
@@ -21,10 +16,15 @@
                   BANNER
    ============================================ */
 .banner {
+  text-align: center;
+  margin-bottom: 20rem;
   height: 100vh;
-  background: linear-gradient(rgba(#000, 0.2), rgba(#000, 0.2)),
-    url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat center /
-      cover;
+  background: linear-gradient(
+      rgba($color__primary, 0.3),
+      rgba($color__secondary, 0.2)
+    ),
+    url('../../assets/imgs/john-o-nolan-rqrv0bbzMLg-unsplash.jpg') no-repeat
+      center / cover;
 
   font-size: 3.6rem;
   @include immaFlex($align: center, $just: center);
@@ -37,6 +37,7 @@
     margin-right: -15rem;
     margin-left: -15rem;
     margin-top: -10rem;
+    height: 110vh;
   }
 }
 
@@ -44,7 +45,7 @@
                   INFO
    ============================================ */
 .info {
-  margin-top: 20rem;
+  margin-bottom: 20rem;
   text-align: center;
   @include mediaQ('>=desktop') {
     text-align: left;
@@ -169,6 +170,11 @@
       outline: none;
     }
   }
+
+  svg {
+    fill: #e0e0e0;
+    stroke: #fff;
+  }
 }
 
 /* ============================================
@@ -176,7 +182,6 @@
    ============================================ */
 
 .rec {
-  margin-top: 20rem;
   margin-bottom: 20rem;
   text-align: center;
   @include mediaQ('>=desktop') {
@@ -184,12 +189,13 @@
   }
 
   &__img {
-    background: url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat
-      center / cover;
+    background: url('../../assets/imgs/kyle-cut-media-UrhglJ-2Q8M-unsplash.jpg')
+      no-repeat 95% 10% / cover;
   }
+
   &__img2 {
-    background: url('../../assets/imgs/pexels-scott-webb-29049.jpg') no-repeat
-      center / cover;
+    background: url('../../assets/imgs/wade-lambert-VfdOzbZkW1w-unsplash.jpg')
+      no-repeat center / cover;
   }
 
   &__title {
@@ -237,7 +243,7 @@
    ============================================ */
 
 .welcome {
-  margin-top: 20rem;
+  margin-bottom: 20rem;
 
   text-align: center;
   @include mediaQ('>=desktop') {

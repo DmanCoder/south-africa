@@ -23,7 +23,7 @@ const Nav = () => {
 
           {/* LANGUAGE SELECTION */}
           <li>
-            EN <span className="material-icons">expand_more</span>
+            En &nbsp; <span className="material-icons">expand_more</span>
           </li>
 
           {/* PAGES */}

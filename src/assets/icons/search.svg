@@ -1,16 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
-  <defs>
-    <rect id="rect-1" width="20" height="20" x="0" y="0"/>
-    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
-      <rect width="20" height="20" x="0" y="0" fill="black"/>
-      <use fill="white" xlink:href="#rect-1"/>
-    </mask>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="15.899" height="15.9" viewBox="0 0 15.899 15.9">
   <g>
-    <use fill="none" xlink:href="#rect-1"/>
-    <g mask="url(#mask-2)">
-      <path fill="none" stroke="rgb(25,52,80)" stroke-dasharray="0 0 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.9 15.33792c3.53464 0 6.4-2.86544 6.4-6.4 0-3.534648-2.86536-6.400032-6.4-6.400032-3.534624 0-6.4 2.865384-6.4 6.400032 0 3.53456 2.865376 6.4 6.4 6.4h0z"/>
-      <path fill="none" stroke="rgb(25,52,80)" stroke-dasharray="0 0 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.89872 16.93784l-3.48-3.48"/>
-    </g>
+    <path fill="none" stroke-dasharray="0 0 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.15 13.550032c3.53464 0 6.4-2.86544 6.4-6.4C13.55 3.615384 10.68464.75 7.15.75 3.615376.75.75 3.615384.75 7.150032c0 3.53456 2.865376 6.4 6.4 6.4h0z"/>
+    <path fill="none" stroke-dasharray="0 0 0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.14872 15.149952l-3.48-3.48"/>
   </g>
 </svg>

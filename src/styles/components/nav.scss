@@ -1,18 +1,10 @@
 .nav {
   background: transparent;
   color: $color__primary;
-  // color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10000;
-
-  @include mediaQ('>=desktop') {
-  }
-
-  svg {
-    fill: #fff;
-  }
 
   ul {
     height: 6.5rem;
@@ -24,26 +16,45 @@
       padding-left: 12rem;
       padding-right: 12rem;
     }
-    
+
     li {
-      font-size: 1.6rem;
-      font-weight: bold;
-      fill: red;
+      font-size: 1.85rem;
+      color: white;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
 
     li:nth-child(1) // LOGO
     {
       @include mediaQ('>=desktop') {
         margin-right: auto;
+        width: 2rem;
+        height: 2rem;
       }
     }
 
     li:nth-child(2) // HAMBURGER
     {
+      padding-right: 1.3rem;
       margin-left: auto;
       @include mediaQ('>=desktop') {
         display: none;
       }
+    }
+    li:nth-child(10), // IG
+    li:nth-child(12) // SEARCH ICON
+    {
+      stroke: #fff;
+    }
+
+    li:nth-child(1), // LOGO
+    li:nth-child(9), // FACEBOOK
+    li:nth-child(11) // TWITTER
+    {
+      fill: #fff;
     }
 
     li:nth-child(12), // SEARCH ICON
@@ -63,11 +74,20 @@
       @include mediaQ('>=desktop') {
         display: block;
         padding: 1rem;
-        font-weight: 600;
+        color: white;
+        fill: white;
 
+        margin-left: 5rem;
         &:not(:last-child) {
-          margin-left: 5rem;
         }
+      }
+    }
+
+    li:nth-child(3) //  LANGUAGE SELECTION
+    {
+      display: none;
+      @include mediaQ('>=desktop') {
+        @include immaFlex($align: center);
       }
     }
 
@@ -88,7 +108,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: $color__primary;
+    background: linear-gradient(to top, $color__primary 5%, $color__secondary);
     width: 20%;
   }
 }
