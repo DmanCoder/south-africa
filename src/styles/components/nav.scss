@@ -1,0 +1,94 @@
+.nav {
+  background: transparent;
+  color: $color__primary;
+  // color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+
+  @include mediaQ('>=desktop') {
+  }
+
+  svg {
+    fill: #fff;
+  }
+
+  ul {
+    height: 6.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    @include immaFlex($align: center);
+    @include mediaQ('>=desktop') {
+      height: 12rem;
+      padding-left: 12rem;
+      padding-right: 12rem;
+    }
+    
+    li {
+      font-size: 1.6rem;
+      font-weight: bold;
+      fill: red;
+    }
+
+    li:nth-child(1) // LOGO
+    {
+      @include mediaQ('>=desktop') {
+        margin-right: auto;
+      }
+    }
+
+    li:nth-child(2) // HAMBURGER
+    {
+      margin-left: auto;
+      @include mediaQ('>=desktop') {
+        display: none;
+      }
+    }
+
+    li:nth-child(12), // SEARCH ICON
+    li:nth-child(11), // TWITTER
+    li:nth-child(10), // IG
+    li:nth-child(9), //  FACEBOOK
+    li:nth-child(8), //  ABOUT
+    li:nth-child(7), //  BOOK NOW
+    li:nth-child(6), //  SIGNATURE TRIPS
+    li:nth-child(5), //  SPECIALS
+    li:nth-child(4), //  DESTINATIONS
+    li:nth-child(3) //  LANGUAGE SELECTION
+    {
+      display: none;
+      cursor: not-allowed;
+
+      @include mediaQ('>=desktop') {
+        display: block;
+        padding: 1rem;
+        font-weight: 600;
+
+        &:not(:last-child) {
+          margin-left: 5rem;
+        }
+      }
+    }
+
+    li:nth-child(3), // LANGUAGE SELECTION
+    li:nth-child(8) //  ABOUT
+    {
+      @include mediaQ('>=desktop') {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.nav-side {
+  display: none;
+  @include mediaQ('>=desktop') {
+    display: block;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: $color__primary;
+    width: 20%;
+  }
+}
