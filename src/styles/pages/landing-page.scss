@@ -269,6 +269,8 @@
   }
 
   &__title {
+    max-width: 34rem;
+    margin: 0 auto;
     font-weight: 700;
     font-size: 2.6rem;
     font-style: italic;
@@ -276,7 +278,7 @@
     position: relative;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
-    @include mediaQ('>=tablet') {
+    @include mediaQ('>=desktop') {
       max-width: 48rem;
       margin-left: auto;
       font-size: 3.2rem;
@@ -295,12 +297,12 @@
     background-size: cover;
     display: block;
     position: absolute;
-    left: 2rem;
+    left: 0;
     top: -1rem;
     transform: rotate(180deg);
     width: 1.5rem;
     height: 1.5rem;
-    @include mediaQ('>=tablet') {
+    @include mediaQ('>=desktop') {
       left: 0;
       top: -3rem;
       width: 5rem;
@@ -316,9 +318,9 @@
     height: 1.5rem;
     display: block;
     position: absolute;
-    right: 3rem;
+    right: 1rem;
     bottom: -1rem;
-    @include mediaQ('>=tablet') {
+    @include mediaQ('>=desktop') {
       right: 6rem;
       bottom: -3rem;
       width: 5rem;
