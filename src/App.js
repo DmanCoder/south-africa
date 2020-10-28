@@ -18,7 +18,12 @@ const App = () => {
       <div className="content">
         <div className="banner">
           {/* ADD VIDEO PLAYER HERE */}
+          <p className="banner__msg">Journey of the week</p>
           <h1 className="banner__title">South Africa</h1>
+          <button className="banner__btn">
+            <span className="material-icons">add_circle</span>
+            <span>Read Article</span>
+          </button>
         </div>
 
         <div className="info">
