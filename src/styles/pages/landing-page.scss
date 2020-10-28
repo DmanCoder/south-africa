@@ -17,27 +17,27 @@
    ============================================ */
 .banner {
   text-align: center;
-  margin-bottom: 20rem;
   height: 100vh;
+  margin-bottom: 8rem;
   background: linear-gradient(
       rgba($color__primary, 0.3),
       rgba($color__secondary, 0.2)
     ),
-    url('../../assets/imgs/john-o-nolan-rqrv0bbzMLg-unsplash.jpg') no-repeat
-      center / cover;
-
-  font-size: 3.6rem;
+    url('../../assets/imgs/john-o-nolan-rqrv0bbzMLg-unsplash.jpg') no-repeat 20%
+      50% / cover;
+  line-height: 8rem;
   @include immaFlex($align: center, $just: center);
-
-  h1 {
-    color: #fff;
-  }
-
   @include mediaQ('>=desktop') {
+    margin-bottom: 20rem;
     margin-right: -15rem;
     margin-left: -15rem;
     margin-top: -10rem;
     height: 110vh;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 5rem;
   }
 }
 
@@ -45,16 +45,19 @@
                   INFO
    ============================================ */
 .info {
-  margin-bottom: 20rem;
   text-align: center;
+  margin-bottom: 8rem;
   @include mediaQ('>=desktop') {
+    margin-bottom: 20rem;
     text-align: left;
   }
 
   &__title {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 900;
     margin-bottom: 4rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
 
     @include mediaQ('>=desktop') {
       font-size: 6.2rem;
@@ -62,10 +65,12 @@
   }
 
   &__sub-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-style: italic;
     font-weight: 600;
     margin-bottom: 4rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
     @include mediaQ('>=desktop') {
       font-size: 3.6rem;
       max-width: 60rem;
@@ -99,6 +104,10 @@
       letter-spacing: 0.2rem;
       line-height: 3.5rem;
     }
+  }
+
+  &__text:last-child {
+    margin-bottom: 8rem;
   }
 
   &__quick-facts {
@@ -174,6 +183,12 @@
   svg {
     fill: #e0e0e0;
     stroke: #fff;
+    transform: scale(0.7);
+    position: relative;
+    right: 3rem;
+    z-index: -1;
+    margin-top: -6rem;
+    // width: 100%;
   }
 }
 
@@ -182,10 +197,12 @@
    ============================================ */
 
 .rec {
-  margin-bottom: 20rem;
   text-align: center;
+  margin-bottom: 8rem;
+
   @include mediaQ('>=desktop') {
     text-align: left;
+    margin-bottom: 20rem;
   }
 
   &__img {
@@ -199,7 +216,7 @@
   }
 
   &__title {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 900;
     margin-bottom: 4rem;
     @include mediaQ('>=desktop') {
@@ -243,17 +260,17 @@
    ============================================ */
 
 .welcome {
-  margin-bottom: 20rem;
-
+  margin-bottom: 8rem;
   text-align: center;
   @include mediaQ('>=desktop') {
+    margin-bottom: 20rem;
     height: 72vh;
     @include immaFlex($align: center, $just: center, $dir: column);
   }
 
   &__title {
-    font-size: 3.2rem;
     font-weight: 700;
+    font-size: 2.6rem;
     font-style: italic;
     margin-bottom: 4rem;
     position: relative;
@@ -262,6 +279,7 @@
     @include mediaQ('>=tablet') {
       max-width: 48rem;
       margin-left: auto;
+      font-size: 3.2rem;
       margin-right: auto;
     }
 
@@ -277,11 +295,11 @@
     background-size: cover;
     display: block;
     position: absolute;
-    left: 1.3rem;
-    top: -3rem;
+    left: 2rem;
+    top: -1rem;
     transform: rotate(180deg);
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     @include mediaQ('>=tablet') {
       left: 0;
       top: -3rem;
@@ -294,12 +312,12 @@
     content: ' ';
     background-image: url('../../assets/icons/quote.svg');
     background-size: cover;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     display: block;
     position: absolute;
-    right: 1.3rem;
-    bottom: -3rem;
+    right: 3rem;
+    bottom: -1rem;
     @include mediaQ('>=tablet') {
       right: 6rem;
       bottom: -3rem;

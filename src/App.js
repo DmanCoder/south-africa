@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import img1 from './assets/imgs/pexels-scott-webb-29049.jpg';
+// import img1 from './assets/imgs/pexels-scott-webb-29049.jpg';
 
 // COMPONENTS
 import Nav from './components/navigation/nav';
@@ -18,7 +18,7 @@ const App = () => {
       <div className="content">
         <div className="banner">
           {/* ADD VIDEO PLAYER HERE */}
-          <h1>South Africa</h1>
+          <h1 className="banner__title">South Africa</h1>
         </div>
 
         <div className="info">
