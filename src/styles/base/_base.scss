@@ -8,10 +8,6 @@
 
 html {
   font-size: 62.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
-
-  @include mediaQ('>=tablet') {
-    font-size: 72.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
-  }
 }
 
 body {
@@ -21,7 +17,7 @@ body {
   letter-spacing: 0.05rem;
   background-color: #fff;
   color: $color__primary;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

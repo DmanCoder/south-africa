@@ -1,16 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from './gsapInit';
 
-// import img1 from './assets/imgs/pexels-scott-webb-29049.jpg';
-
-// COMPONENTS
+// Components
 import Nav from './components/navigation/nav';
 
-// AFRICA MAP
+// Africa Map
 import { ReactComponent as AfricaMap } from './assets/imgs/south-africa.svg';
 
 import './styles/main.scss';
 
 const App = () => {
+  const [isScrollDisabled, setIsScrollDisabled] = useState(false);
+
+  const infoCT = useRef(null);
+  // const scrollToRef = (ref) => scroll.scrollTo(ref.current.offsetTop)
+
+  // useEffect(() => {
+  //   let lastScrollTop = 0;
+  //   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+  //   document.addEventListener(
+  //     'scroll',
+  //     () => {
+  //       // or window.addEventListener("scroll"....
+  //       const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  //       if (st > lastScrollTop) {
+  //         // downscroll code
+
+  //         if (!isScrollDisabled) handleScrollMove(lastScrollTop);
+  //       } else {
+  //         // upscroll code
+  //         if (!isScrollDisabled) handleScrollMove(lastScrollTop);
+  //       }
+  //       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  //     },
+  //     false
+  //   );
+  // });
+
+  useEffect(() => {
+    console.log(window)
+    // gsap.to(window, {
+    //   duration: 1,
+    //   scrollTo: infoCT.current.offsetTop - 200,
+    // });
+
+  }, []);
+
+  // const handleScrollMove = (position) => {
+  //   document.addEventListener('scroll', function () {
+  //     setIsScrollDisabled(true);
+
+  //     setTimeout(() => {
+  //       setIsScrollDisabled(false);
+  //     }, 2000);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   console.log(infoCT.current);
+  //   console.log(infoCT.current.offsetTop );
+  //   // Setup isScrolling variable
+  //   let isScrolling;
+
+  //   // Listen for scroll events
+  //   window.addEventListener(
+  //     'scroll',
+  //     (event) => {
+  //       // Clear our timeout throughout the scroll
+  //       window.clearTimeout(isScrolling);
+
+  //       // Set a timeout to run after scrolling ends
+  //       isScrolling = setTimeout(() => {
+  //         // Run the callback
+  //         console.log('Scrolling has stopped.');
+  //       }, 66);
+  //     },
+  //     false
+  //   );
+  // });
+
   return (
     <div>
       <Nav />
@@ -26,7 +94,7 @@ const App = () => {
           </button>
         </div>
 
-        <div className="info">
+        <div ref={infoCT} className="info">
           <div className="twins">
             <div>
               <h3 className="info__title">
