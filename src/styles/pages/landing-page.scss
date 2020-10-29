@@ -1,22 +1,92 @@
 /* ============================================
-                CONTENT
+                SLIDES
    ============================================ */
 
-.content {
+.slide-container {
   @include mediaQ('>=desktop') {
-    width: 80%;
-    position: absolute;
-    right: 0;
     padding-left: 15rem;
     padding-right: 8rem;
-    margin-bottom: 20rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    // overflow: hidden;
+    z-index: 10;
   }
 }
 
 /* ============================================
                   BANNER
    ============================================ */
+
+.banner-text {
+  display: none;
+  @include mediaQ('>=desktop') {
+    display: block;
+    position: absolute;
+    top: 70vh;
+    left: 38rem;
+    z-index: 100;
+  }
+
+  &__msg,
+  &__title,
+  &__btn {
+    @include mediaQ('>=desktop') {
+      position: relative;
+      z-index: 20;
+      top: -15rem;
+      left: -20rem;
+    }
+  }
+
+  &__msg {
+    display: none;
+    @include mediaQ('>=desktop') {
+      display: block;
+      color: #fff;
+      opacity: 0.5;
+      font-size: 2.2rem;
+      margin-bottom: -11rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 5rem;
+    @include mediaQ('>=desktop') {
+      font-size: 15.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn {
+    display: none;
+    @include mediaQ('>=desktop') {
+      border: none;
+      background: transparent;
+      color: #fff;
+      opacity: 0.85;
+      margin-top: -9rem;
+      margin-left: 0.5rem;
+      @include immaFlex($align: center, $just: center);
+
+      span:first-child {
+        font-size: 4rem;
+      }
+      span:last-child {
+        font-size: 2rem;
+        margin-left: 1rem;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .banner {
+  overflow: auto;
   text-align: center;
   height: 100vh;
   background: linear-gradient(
@@ -34,57 +104,13 @@
     justify-content: flex-end;
   }
 
-  &__msg,
-  &__title,
-  &__btn {
-    @include mediaQ('>=desktop') {
-      position: relative;
-      z-index: 5;
-      top: -15rem;
-      left: -20rem;
-    }
-  }
-
-  &__msg {
-    display: none;
-    @include mediaQ('>=desktop') {
-      display: block;
-      color: #fff;
-      opacity: 0.5;
-      font-size: 2.2rem;
-      margin-bottom: -8rem;
-      margin-left: 1.5rem;
-    }
-  }
-
   &__title {
     color: #fff;
     font-size: 5rem;
     @include mediaQ('>=desktop') {
       font-size: 13rem;
       align-items: flex-start;
-    }
-  }
-
-  &__btn {
-    display: none;
-    @include mediaQ('>=desktop') {
-      border: none;
-      background: transparent;
-      color: #fff;
-      opacity: 0.85;
-      margin-top: -4rem;
-      margin-left: 0.5rem;
-      @include immaFlex($align: center, $just: center);
-
-      span:first-child {
-        font-size: 4rem;
-      }
-      span:last-child {
-        font-size: 2rem;
-        margin-left: 1rem;
-        text-decoration: underline;
-      }
+      display: none;
     }
   }
 }
