@@ -19,7 +19,8 @@
 
     li {
       font-size: 1.45rem;
-      color: white;
+      // color: white;
+      color: $color__primary;
 
       svg {
         width: 1.55rem;
@@ -47,14 +48,16 @@
     li:nth-child(10), // IG
     li:nth-child(12) // SEARCH ICON
     {
-      stroke: #fff;
+      // stroke: #fff;
+      stroke: $color__primary;
     }
 
     li:nth-child(1), // LOGO
     li:nth-child(9), // FACEBOOK
     li:nth-child(11) // TWITTER
     {
-      fill: #fff;
+      // fill: #fff;
+      fill: $color__primary;
     }
 
     li:nth-child(12), // SEARCH ICON
@@ -74,8 +77,10 @@
       @include mediaQ('>=desktop') {
         display: block;
         padding: 1rem;
-        color: white;
+        // color: white;
+        color: $color__primary;
         fill: white;
+        fill: $color__primary;
 
         margin-left: 5rem;
         &:not(:last-child) {
@@ -109,7 +114,8 @@
     position: fixed;
     top: 0;
     background: linear-gradient(to top, $color__primary 5%, $color__secondary);
-    width: 25%;
+    // width: 25%;
+    width: 20%;
     z-index: 2;
   }
 }

@@ -8,7 +8,9 @@
     position: absolute;
     right: 0;
     padding-left: 15rem;
-    padding-right: 15rem;
+    padding-right: 8rem;
+    margin-bottom: 20rem;
+
   }
 }
 
@@ -18,7 +20,6 @@
 .banner {
   text-align: center;
   height: 100vh;
-  margin-bottom: 8rem;
   background: linear-gradient(
       rgba($color__primary, 0.3),
       rgba($color__secondary, 0.2)
@@ -28,10 +29,8 @@
   line-height: 8rem;
   @include immaFlex($align: center, $just: center, $dir: column);
   @include mediaQ('>=desktop') {
-    margin-bottom: 20rem;
     margin-right: -15rem;
     margin-left: -15rem;
-    // margin-top: -10rem;
     align-items: flex-start;
     justify-content: flex-end;
   }
@@ -96,9 +95,9 @@
    ============================================ */
 .info {
   text-align: center;
-  margin-bottom: 8rem;
+  margin-top: 8rem;
   @include mediaQ('>=desktop') {
-    margin-bottom: 20rem;
+    margin-top: 20rem;
     text-align: left;
   }
 
@@ -110,7 +109,7 @@
     padding-right: 1.3rem;
 
     @include mediaQ('>=desktop') {
-      font-size: 6.2rem;
+      font-size: 4.6rem;
     }
   }
 
@@ -122,7 +121,7 @@
     padding-left: 1.3rem;
     padding-right: 1.3rem;
     @include mediaQ('>=desktop') {
-      font-size: 3.6rem;
+      font-size: 2.45rem;
       max-width: 60rem;
     }
   }
@@ -138,7 +137,7 @@
     @include mediaQ('>=desktop') {
       text-align: left;
       width: 10rem;
-      margin: 3rem 1rem 0;
+      margin: 3rem 0.3rem 0;
       height: 0.2rem;
     }
   }
@@ -149,7 +148,7 @@
     padding-left: 1.3rem;
     padding-right: 1.3rem;
     @include mediaQ('>=desktop') {
-      font-size: 1.65rem;
+      font-size: 1.25rem;
       font-weight: 600;
       letter-spacing: 0.2rem;
       line-height: 3.5rem;
@@ -168,7 +167,7 @@
     margin-bottom: 4rem;
 
     @include mediaQ('>=desktop') {
-      font-size: 4.2rem;
+      font-size: 2.85rem;
     }
   }
 
@@ -194,7 +193,7 @@
     color: $color__primary;
 
     @include mediaQ('>=desktop') {
-      font-size: 2.2rem;
+      font-size: 1.45rem;
     }
 
     span:first-child {
@@ -221,8 +220,8 @@
     font-weight: 600;
 
     @include mediaQ('>=desktop') {
-      font-size: 2rem;
-      padding: 2.4rem 6rem;
+      font-size: 1.3rem;
+      padding: 2rem 2rem;
     }
 
     &:focus {
@@ -231,17 +230,24 @@
   }
 
   svg {
-    fill: #e0e0e0;
-    stroke: #fff;
-    transform: scale(0.7);
-    position: relative;
-    right: 3rem;
-    z-index: -1;
-    margin-top: -6rem;
-
     @include mediaQ('>=desktop') {
-      transform: scale(1.4);
+      margin-right: -6rem;
+      fill: #e0e0e0;
+      stroke: #fff;
+      position: relative;
+      z-index: -1;
+      margin-top: -6rem;
+      position: relative;
+      right: 7rem;
+      margin-top: -20rem;
+      top: 2rem;
+      transform: scale(0.7);
     }
+  }
+
+  div div:last-child {
+    // background-color: red;
+    padding-left: 15rem;
   }
 }
 
@@ -251,11 +257,11 @@
 
 .rec {
   text-align: center;
-  margin-bottom: 8rem;
+  margin-top: 8rem;
 
   @include mediaQ('>=desktop') {
     text-align: left;
-    margin-bottom: 20rem;
+    margin-top: 20rem;
   }
 
   &__img {
@@ -273,7 +279,7 @@
     font-weight: 900;
     margin-bottom: 4rem;
     @include mediaQ('>=desktop') {
-      font-size: 6.2rem;
+      font-size: 4.6rem;
     }
   }
 
@@ -300,10 +306,22 @@
     padding-right: 1.3rem;
 
     @include mediaQ('>=desktop') {
-      font-size: 1.65rem;
+      font-size: 1.25rem;
       font-weight: 600;
       letter-spacing: 0.2rem;
       line-height: 3.5rem;
+    }
+  }
+
+  div div:first-child {
+    @include mediaQ('>=desktop') {
+      height: 75vh;
+    }
+  }
+  div div:last-child {
+    @include mediaQ('>=desktop') {
+      margin-left: 10rem;
+      height: 75vh;
     }
   }
 }
@@ -317,7 +335,7 @@
   text-align: center;
   @include mediaQ('>=desktop') {
     margin-bottom: 20rem;
-    height: 72vh;
+    height: 100vh;
     @include immaFlex($align: center, $just: center, $dir: column);
   }
 
@@ -332,15 +350,8 @@
     padding-left: 1.3rem;
     padding-right: 1.3rem;
     @include mediaQ('>=desktop') {
-      max-width: 48rem;
-      margin-left: auto;
-      font-size: 3.2rem;
-      margin-right: auto;
-    }
-
-    @include mediaQ('>=desktop') {
       max-width: 98rem;
-      font-size: 7.5rem;
+      font-size: 6.5rem;
     }
   }
 
@@ -356,7 +367,7 @@
     width: 1.5rem;
     height: 1.5rem;
     @include mediaQ('>=desktop') {
-      left: 0;
+      left: 3.5rem;
       top: -3rem;
       width: 5rem;
       height: 5rem;
@@ -374,7 +385,7 @@
     right: 1rem;
     bottom: -1rem;
     @include mediaQ('>=desktop') {
-      right: 6rem;
+      right: 8rem;
       bottom: -3rem;
       width: 5rem;
       height: 5rem;
@@ -382,13 +393,14 @@
   }
 
   &__text {
+    margin-top: 3rem;
     font-size: 1.45rem;
     // margin-bottom: 4rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
 
     @include mediaQ('>=desktop') {
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       font-weight: 600;
       letter-spacing: 0.2rem;
       max-width: 98rem;

@@ -108,14 +108,11 @@ const App = () => {
               <p className="info__text">
                 When it comes to incredible scenery, South Africa is right up
                 there with the best. Boasting vast savannas, stunning beaches
-                and dramatic mountains, this continent has it all. Throw in epic
-                canyons, sugar plantations and extinct volcanoes, and you've got
-                endless opportunities to explore nature at its finest
+                and dramatic mountains, this continent has it all. Quas soluta dicta excepturi.
               </p>
               <p className="info__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
                 rem quas soluta dicta excepturi tempora nulla doloribus nemo
-                quo.
               </p>
             </div>
 
@@ -167,16 +164,13 @@ const App = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
-                aperiam tempore nemo doloribus ad! eligendi, odit qui ipsam
-                corporis aperiam tempore nemo doloribus ad!
+                aperiam tempore nemo doloribus ad! eligendi.
               </p>
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
-                aperiam tempore nemo doloribus ad! deleniti asperiores nihil
-                minus alias neque illum, ducimus consequuntur ea quo eligendi,
-                odit qui ipsam corporis aperiam tempore nemo doloribus ad!
+                aperiam tempore nemo doloribus ad!
               </p>
             </div>
           </div>
@@ -204,24 +198,20 @@ const App = () => {
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
-                ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
-                aperiam tempore nemo doloribus ad!
+                ducimus consequuntur ea quo eligendi.
               </p>
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
-                aperiam tempore nemo doloribus ad! eligendi, odit qui ipsam
-                corporis aperiam tempore nemo doloribus ad!
+                aperiam tempore nemo doloribus ad! eligendi.
               </p>
 
               <p className="rec__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
-                aperiam tempore nemo doloribus ad! deleniti asperiores nihil
-                minus alias neque illum, ducimus consequuntur ea quo eligendi,
-                odit qui ipsam corporis aperiam tempore nemo doloribus ad!
+                aperiam tempore nemo doloribus ad!
               </p>
             </div>
             <div className="rec__img2"></div>
