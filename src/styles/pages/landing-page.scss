@@ -10,7 +10,6 @@
     padding-left: 15rem;
     padding-right: 8rem;
     margin-bottom: 20rem;
-
   }
 }
 
@@ -165,7 +164,8 @@
     font-style: italic;
     font-weight: 800;
     margin-bottom: 4rem;
-
+    position: relative;
+    z-index: 1;
     @include mediaQ('>=desktop') {
       font-size: 2.85rem;
     }
@@ -230,10 +230,12 @@
   }
 
   svg {
+    fill: #e0e0e0;
+    stroke: #fff;
+    transform: scale(0.8);
+    z-index: -1;
     @include mediaQ('>=desktop') {
       margin-right: -6rem;
-      fill: #e0e0e0;
-      stroke: #fff;
       position: relative;
       z-index: -1;
       margin-top: -6rem;
@@ -246,8 +248,9 @@
   }
 
   div div:last-child {
-    // background-color: red;
-    padding-left: 15rem;
+    @include mediaQ('>=desktop') {
+      padding-left: 15rem;
+    }
   }
 }
 
