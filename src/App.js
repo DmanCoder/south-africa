@@ -4,66 +4,57 @@ import gsap from './gsapInit';
 // Components
 import Nav from './components/navigation/nav';
 
+// Animations
+import scrollStop from './animations/scrollStop';
+
 // Africa Map
 import { ReactComponent as AfricaMap } from './assets/imgs/south-africa.svg';
 
 import './styles/main.scss';
+import isEmptyVAL from './utils/isEmpty';
+
+const difference = (a, b) => {
+  return Math.abs(a - b);
+};
 
 const App = () => {
-  // Animating Flag - is out app animating
-  const [isAnimating, setIsAnimating] = useState(false);
+  // Slides
+  let slideCT = useRef(null);
+  let slideBanner = useRef(null);
+  let slideInfo = useRef(null);
+  let slideRec1 = useRef(null);
+  let slideWelcome = useRef(null);
+  let slideRec2 = useRef(null);
 
-  // Keep track of slide position
-  const [slidePosition, setSlidePosition] = useState(0);
-
-  // Height of the window
-  const pageHeight = window.innerHeight;
-
-  let aniSlideCT = useRef([]);
-  let slide1Banner = useRef(null);
-  let slide2Info1 = useRef(null);
-  let slide3Info2 = useRef(null);
-  let slide4Welcome = useRef(null);
-  let slide5Rec = useRef(null);
-
+  // Slides Array
   const slides = [
-    slide1Banner,
-    slide2Info1,
-    slide3Info2,
-    slide4Welcome,
-    slide5Rec,
+    { el: slideBanner, offset: 0 },
+    { el: slideInfo, offset: 200 },
+    { el: slideRec1, offset: 200 },
+    { el: slideWelcome, offset: 0 },
+    { el: slideRec2, offset: 180 },
   ];
 
-  // let aniCurrentSlide = useRef()
+  // Animation state
+  let isAnimating = false;
+
+  // Counter
+  let counter = 0;
 
   useEffect(() => {
-    // mousewheel DOMMouseScroll
-    // document.addEventListener('mousewheel', handleOnMouseWheel);
-
-    // Setup isScrolling variable
-    let isScrolling;
-
-    // Listen for scroll events
-    window.addEventListener(
-      // 'scroll',
-      'mousewheel',
-      (event) => {
-        // Clear our timeout throughout the scroll
-        window.clearTimeout(isScrolling);
-        // Set a timeout to run after scrolling ends
-        isScrolling = setTimeout(() => {
-          // Run the callback
-          console.log('Scrolling has stopped.', event);
-          handleOnMouseWheel(event);
-        }, 1000);
-      },
-      false
-    );
+    // `scrollStop` runs once users have stopped scrolling - 500ms after
+    scrollStop((event) => {
+      handleOnMouseWheel(event);
+    });
   });
 
+  // Run when `slideIndex` has changed
+  // useEffect(() => {}, [animationState.slideIndex]);
+
+  // When user scrolls with the mouse, we have to change slides
   const handleOnMouseWheel = (event) => {
     // Normalize event wheel delta
-    var delta = event.wheelDelta / 30 || -event.detail;
+    const delta = event.wheelDelta / 30 || -event.detail;
 
     // If the user scrolled up, it goes to previous slide, otherwise - to next slide
     if (delta < -1) {
@@ -71,45 +62,50 @@ const App = () => {
       handleGoToNextSlide();
     } else if (delta > 1) {
       // Go to previous slide
-      console.log('Go to previous slide');
+      handleGoToPrevSlide();
+    }
+
+    event.preventDefault(event);
+  };
+
+  const handleGoToNextSlide = () => {
+    // If there's a next slide, slide to it
+    const pos = counter + 1;
+    if (slides[pos]) {
+      counter++;
+      handleGoToSlide(slides[counter]);
     }
   };
 
-  //  If there's a next slide, slide to it
-  const handleGoToNextSlide = () => {
-    const pos = slidePosition + 1;
-    if (slides[pos] === undefined) return;
-
-    // Increment slide position by 1
-    // setSlidePosition(pos);
-    // handleGoToSlide(slides[pos]);
+  const handleGoToPrevSlide = () => {
+    // If there's a next slide, slide to it
+    const pos = counter - 1;
+    if (slides[pos]) {
+      counter--;
+      handleGoToSlide(slides[counter]);
+    }
   };
 
   // Actual transition between slides
   const handleGoToSlide = (slide) => {
-    // If the slides are not changing and there's such a slide
-    if (!isAnimating && slide.current) {
-      // Increment slide position by 1
+    //If the slides are not changing and there's such a slide
+    if (!isAnimating && !isEmptyVAL(slide)) {
+      isAnimating = true;
 
-      console.log(slide, '============= ANIMATING');
-
-      // Setting animating flag to true
-      setIsAnimating(true);
-
-      gsap.to(aniSlideCT.current, {
-        duration: 1,
-        scrollTo: { y: slide.current.offsetTop - 200 },
-        onComplete: onSlideChangeEnd,
+      // Sliding to current slide
+      gsap.to(slideCT.current, 1, {
+        duration: 1.5,
+        ease: 'power2.inOut',
+        scrollTo: { y: slide.el.current.offsetTop - slide.offset },
+        onComplete: handleOnSlideChangeEnd,
         onCompleteScope: this,
       });
     }
   };
 
-  /*
-   * Once the sliding is finished, we need to restore "isAnimating" flag.
-   * You can also do other things in this function, such as changing page title
-   */
-  const onSlideChangeEnd = () => setIsAnimating(false);
+  const handleOnSlideChangeEnd = () => {
+    isAnimating = false;
+  };
 
   return (
     <div>
@@ -122,13 +118,13 @@ const App = () => {
           <span>Read Article</span>
         </button>
       </div>
-      <div ref={aniSlideCT} className="slide-container">
-        <div ref={slide1Banner} className="banner">
+      <div ref={slideCT} className="slide-container">
+        <div ref={slideBanner} className="banner">
           {/* ADD VIDEO PLAYER HERE */}
           <h1 className="banner__title">South Africa</h1>
         </div>
 
-        <div ref={slide2Info1} className="info">
+        <div ref={slideInfo} className="info">
           <div className="twins">
             <div>
               <h3 className="info__title">
@@ -184,7 +180,7 @@ const App = () => {
         </div>
 
         {/* RECOMMENDATION */}
-        <div ref={slide3Info2} className="rec">
+        <div ref={slideRec1} className="rec">
           <div className="twins">
             <div className="rec__img"></div>
             <div className="rec__info">
@@ -212,7 +208,7 @@ const App = () => {
         </div>
 
         {/* WELCOME */}
-        <div ref={slide4Welcome} className="welcome">
+        <div ref={slideWelcome} className="welcome">
           <h3 className="welcome__title">
             Enjoy and Welcome to the World of South Africa!
           </h3>
@@ -226,7 +222,7 @@ const App = () => {
         </div>
 
         {/* RECOMMENDATION */}
-        <div ref={slide5Rec} className="rec">
+        <div ref={slideRec2} className="rec margin-b">
           <div className="twins">
             <div className="rec__info">
               <h3 className="rec__title">Experience The Safari</h3>

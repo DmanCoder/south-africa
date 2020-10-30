@@ -11,7 +11,7 @@
     top: 0;
     width: 80%;
     height: 100%;
-    // overflow: hidden;
+    overflow: hidden;
     z-index: 10;
   }
 }
@@ -25,9 +25,10 @@
   @include mediaQ('>=desktop') {
     display: block;
     position: absolute;
-    top: 70vh;
+    top: 69.5vh;
     left: 38rem;
     z-index: 100;
+    height: 0;
   }
 
   &__msg,
@@ -48,7 +49,7 @@
       color: #fff;
       opacity: 0.5;
       font-size: 2.2rem;
-      margin-bottom: -11rem;
+      margin-bottom: -1.5rem;
       margin-left: 1.5rem;
     }
   }
@@ -56,6 +57,7 @@
   &__title {
     color: #fff;
     font-size: 5rem;
+    margin: 0;
     @include mediaQ('>=desktop') {
       font-size: 15.5rem;
       align-items: flex-start;
@@ -69,7 +71,7 @@
       background: transparent;
       color: #fff;
       opacity: 0.85;
-      margin-top: -9rem;
+      margin-top: 0.5rem;
       margin-left: 0.5rem;
       @include immaFlex($align: center, $just: center);
 
@@ -123,6 +125,7 @@
   margin-top: 8rem;
   @include mediaQ('>=desktop') {
     margin-top: 20rem;
+    margin-bottom: 20rem;
     text-align: left;
   }
 
@@ -283,7 +286,6 @@
 /* ============================================
                 REC / RECOMMENDATION
    ============================================ */
-
 .rec {
   text-align: center;
   margin-top: 8rem;
@@ -299,8 +301,7 @@
   }
 
   &__img2 {
-    background: url('../../assets/imgs/wade-lambert-VfdOzbZkW1w-unsplash.jpg')
-      no-repeat center / cover;
+    background: url('../../assets/imgs/lion-king.jpg') no-repeat center / cover;
   }
 
   &__title {
@@ -436,4 +437,8 @@
       line-height: 3.5rem;
     }
   }
+}
+
+.margin-b {
+  margin-bottom: 20rem;
 }
