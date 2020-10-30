@@ -44,7 +44,9 @@ const App = () => {
   useEffect(() => {
     // `scrollStop` runs once users have stopped scrolling - 500ms after
     scrollStop((event) => {
-      handleOnMouseWheel(event);
+      if (!isAnimating) {
+        handleOnMouseWheel(event);
+      }
     });
   });
 
@@ -93,7 +95,7 @@ const App = () => {
       isAnimating = true;
 
       // Sliding to current slide
-      gsap.to(slideCT.current, 1, {
+      gsap.to(slideCT.current, {
         duration: 1.5,
         ease: 'power2.inOut',
         scrollTo: { y: slide.el.current.offsetTop - slide.offset },

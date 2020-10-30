@@ -26,7 +26,7 @@ const scrollStop = (callback) => {
       isScrolling = setTimeout(() => {
         // Run the callback
         callback(event);
-      }, 500);
+      }, 400);
     },
     false
   );
