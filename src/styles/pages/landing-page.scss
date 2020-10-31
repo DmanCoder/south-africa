@@ -11,7 +11,7 @@
     top: 0;
     width: 80%;
     height: 100%;
-    // overflow: hidden;
+    overflow: hidden;
     z-index: 10;
   }
 }
@@ -19,6 +19,18 @@
 /* ============================================
                   BANNER
    ============================================ */
+.banner-layer-one,
+.banner-layer-two {
+  width: 0;
+  height: 100%;
+  position: absolute;
+}
+.banner-layer-one {
+  background-color: #fff;
+}
+.banner-layer-two {
+  background-color: rgba(#fff, 0.5);
+}
 
 .banner-text {
   display: none;

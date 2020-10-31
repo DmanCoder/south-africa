@@ -1,6 +1,6 @@
 .nav {
   background: transparent;
-  color: $color__primary;
+  color: #fff;
   position: fixed;
   width: 100%;
   top: 0;
@@ -20,12 +20,12 @@
     li {
       font-size: 1.45rem;
       // color: white;
-      font-weight: 600;
-      color: $color__primary;
+      font-weight: 500;
+      color: #fff;
 
       svg {
-        width: 1.55rem;
-        height: 1.55rem;
+        width: 1.6rem;
+        height: 1.6rem;
       }
     }
 
@@ -50,7 +50,7 @@
     li:nth-child(12) // SEARCH ICON
     {
       // stroke: #fff;
-      stroke: $color__primary;
+      stroke: #fff;
     }
 
     li:nth-child(1), // LOGO
@@ -58,7 +58,7 @@
     li:nth-child(11) // TWITTER
     {
       // fill: #fff;
-      fill: $color__primary;
+      fill: #fff;
     }
 
     li:nth-child(12), // SEARCH ICON
@@ -79,9 +79,9 @@
         display: block;
         padding: 1rem;
         // color: white;
-        color: $color__primary;
+        color: #fff;
         fill: white;
-        fill: $color__primary;
+        fill: #fff;
 
         margin-left: 5rem;
         &:not(:last-child) {

@@ -24,29 +24,55 @@ const App = () => {
 
   // Slides Array
   const slides = [
-    { el: slideBanner, offset: 0 },
-    { el: slideInfo, offset: 200 },
-    { el: slideRec1, offset: 200 },
-    { el: slideWelcome, offset: 0 },
-    { el: slideRec2, offset: 180 },
+    { el: slideBanner, offset: 0, delay: 0 },
+    { el: slideInfo, offset: 200, delay: 0 },
+    { el: slideRec1, offset: 200, delay: 0 },
+    { el: slideWelcome, offset: 0, delay: 0 },
+    { el: slideRec2, offset: 180, delay: 0 },
   ];
 
-  // Animation state 
+  // Animation state
   let isAnimating = false;
   let slideIndex = 0;
 
   useEffect(() => {
     // `scrollStop` runs once users have stopped scrolling - 500ms after
-    // scrollStop((event) => {
-    //   if (!isAnimating) {
-    //     handleOnMouseWheel(event);
-    //   }
-    // });
+    scrollStop((event) => {
+      if (!isAnimating) {
+        handleOnMouseWheel(event);
+      }
+    });
 
-    // Scroll Animations
+    // let lastScrollTop = 0;
+    // let test = false;
+    // // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+    // document.addEventListener(
+    //   'scroll',
+    //   () => {
+    //     // or window.addEventListener("scroll"....
+    //     const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
 
+    //     if (st < 50 && !test) {
+    //       test = true
+    //       console.log('running');
+    //       gsap.to(['.banner-layer-one', '.banner-layer-two'], {
+    //         duration: 1,
+    //         css: { width: '100%' },
+    //       });
+    //     }
 
-    
+    //     console.log(st, '-----------------------------');
+    //     if (st > lastScrollTop) {
+    //       // downscroll code
+    //       // if (!isScrollDisabled) handleScrollMove(lastScrollTop);
+    //     } else {
+    //       // upscroll code
+    //       // if (!isScrollDisabled) handleScrollMove(lastScrollTop);
+    //     }
+    //     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    //   },
+    //   false
+    // );
   });
 
   // Run when `slideIndex` has changed
@@ -74,6 +100,10 @@ const App = () => {
     const pos = slideIndex + 1;
     if (slides[pos]) {
       slideIndex++;
+
+      if (slideIndex === 1) {
+        gsap.to('.banner', { duration: 1, width: 0 });
+      }
       handleGoToSlide(slides[slideIndex]);
     }
   };
@@ -87,6 +117,11 @@ const App = () => {
     }
   };
 
+  const handleInitialBtn = () => {
+    slideIndex++;
+    handleGoToSlide(slides[1]);
+  };
+
   // Actual transition between slides
   const handleGoToSlide = (slide) => {
     //If the slides are not changing and there's such a slide
@@ -95,6 +130,7 @@ const App = () => {
 
       // Sliding to current slide
       gsap.to(slideCT.current, {
+        delay: slide.delay,
         duration: 1.5,
         ease: 'power2.inOut',
         scrollTo: { y: slide.el.current.offsetTop - slide.offset },
@@ -114,13 +150,15 @@ const App = () => {
       <div className="banner-text">
         <p className="banner-text__msg">Journey of the week</p>
         <h1 className="banner-text__title">South Africa</h1>
-        <button className="banner-text__btn">
+        <button onClick={handleInitialBtn} className="banner-text__btn">
           <span className="material-icons">add_circle</span>
           <span>Read Article</span>
         </button>
       </div>
       <div ref={slideCT} className="slide-container">
         <div ref={slideBanner} className="banner">
+          <div className="banner-layer-one"></div>
+          <div className="banner-layer-two"></div>
           {/* ADD VIDEO PLAYER HERE */}
           <h1 className="banner__title">South Africa</h1>
         </div>
