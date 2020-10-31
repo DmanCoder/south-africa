@@ -17,7 +17,7 @@ export const isEdge = !isIE && !!window.StyleMedia;
 export const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 // Edge (based on chromium) detection
-export const isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
+export const isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") !== -1);
 
 // Blink engine detection
 // export const isBlink = (isChrome || isOpera) && !!window.CSS;

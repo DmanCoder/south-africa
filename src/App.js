@@ -13,10 +13,6 @@ import { ReactComponent as AfricaMap } from './assets/imgs/south-africa.svg';
 import './styles/main.scss';
 import isEmptyVAL from './utils/isEmpty';
 
-const difference = (a, b) => {
-  return Math.abs(a - b);
-};
-
 const App = () => {
   // Slides
   let slideCT = useRef(null);
@@ -35,19 +31,22 @@ const App = () => {
     { el: slideRec2, offset: 180 },
   ];
 
-  // Animation state
+  // Animation state 
   let isAnimating = false;
-
-  // Counter
-  let counter = 0;
+  let slideIndex = 0;
 
   useEffect(() => {
     // `scrollStop` runs once users have stopped scrolling - 500ms after
-    scrollStop((event) => {
-      if (!isAnimating) {
-        handleOnMouseWheel(event);
-      }
-    });
+    // scrollStop((event) => {
+    //   if (!isAnimating) {
+    //     handleOnMouseWheel(event);
+    //   }
+    // });
+
+    // Scroll Animations
+
+
+    
   });
 
   // Run when `slideIndex` has changed
@@ -72,19 +71,19 @@ const App = () => {
 
   const handleGoToNextSlide = () => {
     // If there's a next slide, slide to it
-    const pos = counter + 1;
+    const pos = slideIndex + 1;
     if (slides[pos]) {
-      counter++;
-      handleGoToSlide(slides[counter]);
+      slideIndex++;
+      handleGoToSlide(slides[slideIndex]);
     }
   };
 
   const handleGoToPrevSlide = () => {
     // If there's a next slide, slide to it
-    const pos = counter - 1;
+    const pos = slideIndex - 1;
     if (slides[pos]) {
-      counter--;
-      handleGoToSlide(slides[counter]);
+      slideIndex--;
+      handleGoToSlide(slides[slideIndex]);
     }
   };
 
