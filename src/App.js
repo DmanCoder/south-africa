@@ -25,7 +25,7 @@ const App = () => {
   // Slides Array
   const slides = [
     { el: slideBanner, offset: 0, delay: 0 },
-    { el: slideInfo, offset: 200, delay: 0 },
+    { el: slideInfo, offset: 200, delay: 0.8 },
     { el: slideRec1, offset: 200, delay: 0 },
     { el: slideWelcome, offset: 0, delay: 0 },
     { el: slideRec2, offset: 180, delay: 0 },
@@ -42,37 +42,6 @@ const App = () => {
         handleOnMouseWheel(event);
       }
     });
-
-    // let lastScrollTop = 0;
-    // let test = false;
-    // // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-    // document.addEventListener(
-    //   'scroll',
-    //   () => {
-    //     // or window.addEventListener("scroll"....
-    //     const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-
-    //     if (st < 50 && !test) {
-    //       test = true
-    //       console.log('running');
-    //       gsap.to(['.banner-layer-one', '.banner-layer-two'], {
-    //         duration: 1,
-    //         css: { width: '100%' },
-    //       });
-    //     }
-
-    //     console.log(st, '-----------------------------');
-    //     if (st > lastScrollTop) {
-    //       // downscroll code
-    //       // if (!isScrollDisabled) handleScrollMove(lastScrollTop);
-    //     } else {
-    //       // upscroll code
-    //       // if (!isScrollDisabled) handleScrollMove(lastScrollTop);
-    //     }
-    //     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    //   },
-    //   false
-    // );
   });
 
   // Run when `slideIndex` has changed
@@ -100,10 +69,40 @@ const App = () => {
     const pos = slideIndex + 1;
     if (slides[pos]) {
       slideIndex++;
+      const tl = gsap.timeline();
 
-      if (slideIndex === 1) {
-        gsap.to('.banner', { duration: 1, width: 0 });
+      switch (slideIndex) {
+        case 1:
+          tl.to(
+            ['.banner-layer-one', '.banner-layer-two'],
+            {
+              duration: .85,
+              css: { width: '100%' },
+              ease: 'sine.inOut',
+              stagger: { amount: 0.3 },
+            },
+            'zoomImage'
+          )
+            .to('.banner-layer-one', {
+              delay: -0.5,
+              css: { backgroundColor: '#fff' },
+            })
+            .to(
+              '.banner__image-holder',
+              {
+                duration: 1,
+                ease: 'sine.inOut',
+                opacity: 0,
+                css: { scale: 1.6 },
+              },
+              'zoomImage'
+            );
+
+          break;
+        default:
+          break;
       }
+
       handleGoToSlide(slides[slideIndex]);
     }
   };
@@ -157,6 +156,7 @@ const App = () => {
       </div>
       <div ref={slideCT} className="slide-container">
         <div ref={slideBanner} className="banner">
+          <div className="banner__image-holder"></div>
           <div className="banner-layer-one"></div>
           <div className="banner-layer-two"></div>
           {/* ADD VIDEO PLAYER HERE */}
