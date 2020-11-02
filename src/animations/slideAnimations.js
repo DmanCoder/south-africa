@@ -28,7 +28,8 @@ const slideAnimations = (slideIndex) => {
       sideNavigationTL
         .to('.slide-container', { css: { width: '80%' } }, 'start-nav')
         .to('.nav-side', { css: { width: '20%' } }, 'start-nav')
-        .to('.language', { opacity: 1, x: -30 }, 'start-nav')
+        // .to('.language', { opacity: 1, x: -30 }, 'start-nav')
+        .to('.language', { opacity: 1, x: '-80%' }, 'start-nav')
         .to(
           [
             '.banner-text__title',
@@ -42,10 +43,10 @@ const slideAnimations = (slideIndex) => {
         )
         .to('.banner-text__btn-back', { y: 30 })
         .to(
-          '.banner-text__title2',
+          '.nav-side__title',
           {
-            delay: .5,
-            css: { opacity: 1, x: -78 },
+            delay: 0.5,
+            css: { opacity: 1, css: { left: '38%' } },
           },
           'side-show'
         )

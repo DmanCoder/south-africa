@@ -9,7 +9,9 @@ import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
 const Nav = () => {
   return (
     <Fragment>
-      <div className="nav-side"></div>
+      <div className="nav-side">
+        <h1 className="nav-side__title">South Africa</h1>
+      </div>
       <nav className="nav">
         <ul>
           {/* LOGO */}

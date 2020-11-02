@@ -119,4 +119,20 @@
     z-index: 2;
     overflow: none;
   }
+
+  &__title {
+    opacity: 0;
+    color: #fff;
+    font-size: 5rem;
+    margin: 0;
+    font-size: 11rem;
+    align-items: flex-start;
+    top: -30rem;
+    left: -28rem;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    @include centerElement($lt: 80%, $tp: 48%);
+    transform: rotate(-90deg);
+  }
 }

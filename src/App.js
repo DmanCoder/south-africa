@@ -45,9 +45,6 @@ const App = () => {
     });
   });
 
-  // Run when `slideIndex` has changed
-  // useEffect(() => {}, [animationState.slideIndex]);
-
   // When user scrolls with the mouse, we have to change slides
   const handleOnMouseWheel = (event) => {
     // Normalize event wheel delta
@@ -102,7 +99,7 @@ const App = () => {
           // Side navigation
           sideNavigationTL
             .to(
-              ['.banner-text__title2', '.banner-text__btn-back'],
+              ['.nav-side__title', '.banner-text__btn-back'],
               {
                 css: { opacity: 0, x: 20 },
               },
@@ -110,7 +107,7 @@ const App = () => {
             )
             .to('.slide-container', { css: { width: '75%' } }, 'start-nav')
             .to('.nav-side', { css: { width: '25%' } }, 'start-nav')
-            .to('.language', { opacity: 1, x: 0 }, 'start-nav')
+            .to('.language', { opacity: 1, x: '-20%' }, 'start-nav')
             .to(
               [
                 '.banner-text__title',
@@ -175,7 +172,6 @@ const App = () => {
       <div className="banner-text">
         <p className="banner-text__msg">Journey of the week</p>
         <h1 className="banner-text__title">South Africa</h1>
-        <h1 className="banner-text__title2">South Africa</h1>
         <button onClick={handleInitialBtn} className="banner-text__btn">
           <div className="banner-text__btn-start">
             <span className="material-icons">add_circle</span>
