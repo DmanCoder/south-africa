@@ -318,6 +318,7 @@
 /* ============================================
                 REC / RECOMMENDATION
    ============================================ */
+.rec2,
 .rec {
   text-align: center;
   margin-top: 8rem;
@@ -337,6 +338,12 @@
     background: url('../../assets/imgs/kyle-cut-media-UrhglJ-2Q8M-unsplash.jpg')
       no-repeat 95% 10% / cover;
   }
+  &__image-holder2 {
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/imgs/lion-king.jpg')
+      no-repeat 95% 10% / cover;
+  }
 
   &__img-reveal {
     position: absolute;
@@ -346,12 +353,6 @@
     right: 0;
     z-index: 3;
     background-color: #e0e0e0;
-  }
-
-  &__image-holder {
-    width: 100%;
-    height: 100%;
-    background: url('../../assets/imgs/lion-king.jpg') no-repeat center / cover;
   }
 
   &__title {

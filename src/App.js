@@ -257,7 +257,7 @@ const App = () => {
 
           slideFourTL
             .from(
-              '.rec__image-holder',
+              '.rec2__image-holder',
               {
                 delay: 0.6,
                 duration: 1.1,
@@ -266,10 +266,10 @@ const App = () => {
                 transformOrigin: '100% 50%',
                 stagger: { amount: 0.3 },
               },
-              'rec-start'
+              'rec2-start'
             )
             .fromTo(
-              '.rec__img-reveal',
+              '.rec2__img-reveal',
               { width: '100%' },
               {
                 delay: 1.1,
@@ -277,15 +277,15 @@ const App = () => {
                 width: 0,
                 ease: 'power3.out',
               },
-              'rec-start'
+              'rec2-start'
             )
             .from(
-              '.rec-parent-stagger',
-              { duration: 1, y: 100, stagger: { amount: 0.8 } },
-              'rec-start'
+              '.rec2-parent-stagger',
+              { duration: 1, y: 120, stagger: { amount: 0.8 } },
+              'rec2-start'
             )
             .from(
-              '.rec-child-stagger',
+              '.rec2-child-stagger',
               {
                 delay: 0.3,
                 duration: 1,
@@ -293,7 +293,7 @@ const App = () => {
                 y: 120,
                 stagger: { amount: 0.4 },
               },
-              'rec-start'
+              'rec2-start'
             );
           break;
         default:
@@ -471,23 +471,25 @@ const App = () => {
         </div>
 
         {/* RECOMMENDATION */}
-        <div ref={slideRec2} className="rec margin-b">
+        <div ref={slideRec2} className="rec2 margin-b">
           <div className="twins">
-            <div className="twins__one rec__info">
-              <h3 className="rec__title">Experience The Safari</h3>
-              <p className="rec__text">
+            <div className="twins__one rec__info rec2-parent-stagger">
+              <h3 className="rec2__title rec2-child-stagger">
+                Experience The Safari
+              </h3>
+              <p className="rec2__text rec2-child-stagger">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi.
               </p>
-              <p className="rec__text">
+              <p className="rec2__text rec2-child-stagger">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
                 aperiam tempore nemo doloribus ad! eligendi.
               </p>
 
-              <p className="rec__text">
+              <p className="rec2__text rec2-child-stagger">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Obcaecati deleniti asperiores nihil minus alias neque illum,
                 ducimus consequuntur ea quo eligendi, odit qui ipsam corporis
@@ -496,9 +498,9 @@ const App = () => {
             </div>
             {/* <div className="twins__two rec__img2"></div>
              */}
-            <div className="twins__one rec__img-container rec-parent-stagger">
-              <div className="rec__image-holder2">
-                <div className="rec__img-reveal"></div>
+            <div className="twins__two rec__img-container rec2-parent-stagger">
+              <div className="rec2__image-holder2">
+                <div className="rec2__img-reveal"></div>
               </div>
             </div>
           </div>
