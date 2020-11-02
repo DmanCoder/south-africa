@@ -52,7 +52,7 @@ const slideAnimations = (slideIndex) => {
         )
         .to(
           '.banner-text__btn-back',
-          { delay: 0.85, opacity: 1, x: -30 },
+          { delay: 0.85, autoAlpha: 1, x: -30 },
           'side-show'
         );
 

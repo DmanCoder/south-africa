@@ -56,7 +56,6 @@ const App = () => {
       handleGoToNextSlide();
     } else if (delta > 1) {
       // Go to previous slide
-
       handleGoToPrevSlide();
     }
 
@@ -76,6 +75,7 @@ const App = () => {
   const handleGoToPrevSlide = () => {
     // If there's a next slide, slide to it
     const pos = slideIndex - 1;
+    console.log('Preve', slideIndex, pos);
     if (slides[pos]) {
       slideIndex--;
 
@@ -139,11 +139,6 @@ const App = () => {
     }
   };
 
-  const handleInitialBtn = () => {
-    slideIndex++;
-    handleGoToSlide(slides[1]);
-  };
-
   // Actual transition between slides
   const handleGoToSlide = (slide) => {
     //If the slides are not changing and there's such a slide
@@ -172,14 +167,15 @@ const App = () => {
       <div className="banner-text">
         <p className="banner-text__msg">Journey of the week</p>
         <h1 className="banner-text__title">South Africa</h1>
-        <button onClick={handleInitialBtn} className="banner-text__btn">
-          <div className="banner-text__btn-start">
+        <button className="banner-text__btn">
+          <div className="banner-text__btn-start" onClick={handleGoToNextSlide}>
             <span className="material-icons">add_circle</span>
             <span>Read Article</span>
           </div>
-          <div className="banner-text__btn-back">
+
+          <div className="banner-text__btn-back" onClick={handleGoToPrevSlide}>
             <span className="material-icons">arrow_back</span>
-            <span>Back</span>
+            <span>Previous</span>
           </div>
         </button>
       </div>

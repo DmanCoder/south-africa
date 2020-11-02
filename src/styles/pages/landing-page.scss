@@ -77,7 +77,6 @@
   }
 
   &__title2 {
-
   }
 
   &__btn {
@@ -100,9 +99,9 @@
   }
 
   &__btn-back,
-  &__btn-back,
   &__btn-start {
     position: absolute;
+    white-space: nowrap;
     @include immaFlex($align: center);
 
     &:hover span:first-child {
@@ -118,15 +117,12 @@
       font-size: 2rem;
       margin-left: 1rem;
       text-decoration: underline;
-      width: 12rem;
     }
   }
 
   &__btn-back {
     opacity: 0;
-    span:last-child {
-      width: 100%;
-    }
+    z-index: -1;
   }
 }
 
