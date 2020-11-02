@@ -2,11 +2,11 @@
   @include mediaQ('>=desktop') {
     @include immaFlex($align: center, $just: space-between);
 
-    div:first-child {
+    &__one:first-child {
       width: 50%;
       // padding-right: 10rem;
     }
-    div:last-child {
+    &__two:last-child {
       width: 50%;
     }
   }

@@ -27,23 +27,23 @@ const Nav = () => {
           </li>
 
           {/* PAGES */}
-          <li>Destinations</li>
-          <li>Specials</li>
-          <li>Signature Trips</li>
-          <li>Book now</li>
-          <li>About</li>
+          <li className="nav__ani">Destinations</li>
+          <li className="nav__ani">Specials</li>
+          <li className="nav__ani">Signature Trips</li>
+          <li className="nav__ani">Book now</li>
+          <li className="nav__ani">About</li>
 
           {/* SOCIAL MEDIA ICONS */}
-          <li>
+          <li className="nav__ani">
             <Facebook />
           </li>
-          <li>
+          <li className="nav__ani">
             <Ig />
           </li>
-          <li>
+          <li className="nav__ani">
             <Twitter />
           </li>
-          <li>
+          <li className="nav__ani">
             <Search />
           </li>
         </ul>

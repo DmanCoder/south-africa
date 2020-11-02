@@ -327,12 +327,30 @@
     margin-top: 20rem;
   }
 
-  &__img {
+  &__img-container {
+    position: relative;
+  }
+
+  &__image-holder {
+    width: 100%;
+    height: 100%;
     background: url('../../assets/imgs/kyle-cut-media-UrhglJ-2Q8M-unsplash.jpg')
       no-repeat 95% 10% / cover;
   }
 
-  &__img2 {
+  &__img-reveal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background-color: #e0e0e0;
+  }
+
+  &__image-holder {
+    width: 100%;
+    height: 100%;
     background: url('../../assets/imgs/lion-king.jpg') no-repeat center / cover;
   }
 
@@ -375,12 +393,12 @@
     }
   }
 
-  div div:first-child {
+  .twins__one:first-child {
     @include mediaQ('>=desktop') {
       height: 75vh;
     }
   }
-  div div:last-child {
+  .twins__two:last-child {
     @include mediaQ('>=desktop') {
       margin-left: 10rem;
       height: 75vh;
