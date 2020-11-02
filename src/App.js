@@ -71,6 +71,7 @@ const App = () => {
       slideIndex++;
       const bannerTL = gsap.timeline();
       const navigationTL = gsap.timeline();
+      const sideNavigationTL = gsap.timeline();
       const slideOneTL = gsap.timeline();
       const slideTwoTL = gsap.timeline();
       const slideThreeTL = gsap.timeline();
@@ -90,6 +91,37 @@ const App = () => {
               fill: '#1c3454',
               stroke: '#1c3454',
             });
+
+          // Side navigation
+          sideNavigationTL
+            .to('.slide-container', { css: { width: '80%' } }, 'start-nav')
+            .to('.nav-side', { css: { width: '20%' } }, 'start-nav')
+            .to('.language', { opacity: 1, x: -30 }, 'start-nav')
+            .to(
+              [
+                '.banner-text__title',
+                '.banner-text__msg',
+                '.banner-text__btn-start',
+              ],
+              {
+                autoAlpha: 0,
+              },
+              'start-nav'
+            )
+            .to('.banner-text__btn-back', { y: 30 })
+            .to(
+              '.banner-text__title2',
+              {
+                delay: 1,
+                css: { opacity: 1, x: -78 },
+              },
+              'side-show'
+            )
+            .to(
+              '.banner-text__btn-back',
+              { delay: 0.85, opacity: 1, x: -30 },
+              'side-show'
+            );
 
           // Banner
           bannerTL
@@ -345,10 +377,17 @@ const App = () => {
       <Nav />
       <div className="banner-text">
         <p className="banner-text__msg">Journey of the week</p>
-        {/* <h1 className="banner-text__title">South Africa</h1> */}
+        <h1 className="banner-text__title">South Africa</h1>
+        <h1 className="banner-text__title2">South Africa</h1>
         <button onClick={handleInitialBtn} className="banner-text__btn">
-          <span className="material-icons">add_circle</span>
-          <span>Read Article</span>
+          <div className="banner-text__btn-start">
+            <span className="material-icons">add_circle</span>
+            <span>Read Article</span>
+          </div>
+          <div className="banner-text__btn-back">
+            <span className="material-icons">arrow_back</span>
+            <span>Back</span>
+          </div>
         </button>
       </div>
       <div ref={slideCT} className="slide-container">
@@ -357,7 +396,7 @@ const App = () => {
           <div className="banner-layer-one"></div>
           <div className="banner-layer-two"></div>
           {/* ADD VIDEO PLAYER HERE */}
-          {/* <h1 className="banner__title">South Africa</h1> */}
+          <h1 className="banner__title">South Africa</h1>
         </div>
 
         <div ref={slideInfo} className="info">

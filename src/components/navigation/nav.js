@@ -22,7 +22,7 @@ const Nav = () => {
           </li>
 
           {/* LANGUAGE SELECTION */}
-          <li>
+          <li className="language">
             En &nbsp; <span className="material-icons">expand_more</span>
           </li>
 

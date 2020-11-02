@@ -9,7 +9,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 80%;
+    width: 75%;
     height: 100%;
     overflow: hidden;
     z-index: 10;
@@ -76,35 +76,66 @@
     }
   }
 
+  &__title2 {
+    opacity: 0;
+    color: #fff;
+    font-size: 5rem;
+    margin: 0;
+    font-size: 11rem;
+    align-items: flex-start;
+    top: -30rem;
+    // left: -35.8rem;
+    left: -28rem;
+    position: absolute;
+    transform: rotate(-90deg);
+  }
+
   &__btn {
     display: none;
+    background: none;
+    word-wrap: break-word;
+
+    &:focus {
+      outline: none;
+    }
     @include mediaQ('>=desktop') {
       border: none;
+      display: block;
       cursor: pointer;
-      background: transparent;
       color: #fff;
       opacity: 0.85;
-      margin-top: 0.5rem;
-      margin-left: 0.5rem;
-      @include immaFlex($align: center, $just: center);
+      // margin-top: 0.5rem;
+      // margin-left: 0.5rem;
+    }
+  }
 
-      &:focus {
-        outline: none;
-      }
-      &:hover span:first-child {
-        font-size: 5.5rem;
-        transform: rotate(90deg);
-      }
+  &__btn-back,
+  &__btn-back,
+  &__btn-start {
+    position: absolute;
+    @include immaFlex($align: center);
 
-      span:first-child {
-        font-size: 4rem;
-        transition: all 0.365s;
-      }
-      span:last-child {
-        font-size: 2rem;
-        margin-left: 1rem;
-        text-decoration: underline;
-      }
+    &:hover span:first-child {
+      font-size: 5.5rem;
+      transform: rotate(90deg);
+    }
+
+    span:first-child {
+      font-size: 4rem;
+      transition: all 0.365s;
+    }
+    span:last-child {
+      font-size: 2rem;
+      margin-left: 1rem;
+      text-decoration: underline;
+      width: 12rem;
+    }
+  }
+
+  &__btn-back {
+    opacity: 0;
+    span:last-child {
+      width: 100%;
     }
   }
 }
@@ -341,8 +372,7 @@
   &__image-holder2 {
     width: 100%;
     height: 100%;
-    background: url('../../assets/imgs/lion-king.jpg')
-      no-repeat 95% 10% / cover;
+    background: url('../../assets/imgs/lion-king.jpg') no-repeat 95% 10% / cover;
   }
 
   &__img-reveal {
