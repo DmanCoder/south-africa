@@ -1,6 +1,6 @@
 import gsap from '../gsapInit';
 
-const slideAnimations = (slideIndex) => {
+const nextSlideAnimations = (slideIndex) => {
   const bannerTL = gsap.timeline();
   const navigationTL = gsap.timeline();
   const sideNavigationTL = gsap.timeline();
@@ -266,4 +266,4 @@ const slideAnimations = (slideIndex) => {
   }
 };
 
-export default slideAnimations;
+export default nextSlideAnimations;
