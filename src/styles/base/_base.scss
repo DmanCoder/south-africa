@@ -18,7 +18,7 @@ body {
   background-color: #fff;
   color: $color__primary;
   overflow-x: hidden;
-
+  visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @extend %f-open;

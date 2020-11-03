@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from './gsapInit';
 
 // Components
@@ -11,10 +11,30 @@ import slideAnimations from './animations/slideAnimations';
 // Africa Map
 import { ReactComponent as AfricaMap } from './assets/imgs/south-africa.svg';
 
-import './styles/main.scss';
 import isEmptyVAL from './utils/isEmpty';
 
+// Styles
+import './styles/main.scss';
+
+// Delay timer
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 const App = () => {
+  // Dimensions
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
   // Slides
   let slideCT = useRef(null);
   let slideBanner = useRef(null);
@@ -37,12 +57,32 @@ const App = () => {
   let slideIndex = 0;
 
   useEffect(() => {
-    // `scrollStop` runs once users have stopped scrolling - 500ms after
-    scrollStop((event) => {
-      if (!isAnimating) {
-        handleOnMouseWheel(event);
-      }
-    });
+    if (dimensions.width >= 1024) {
+      gsap.to('.slide-container', { overflow: 'hidden' });
+      scrollStop((event) => {
+        if (!isAnimating) {
+          handleOnMouseWheel(event);
+        }
+      });
+    }
+  }, [dimensions.width]);
+
+  useEffect(() => {
+    // // prevents flashing
+    gsap.to('body', 0, { css: { visibility: 'visible' } });
+
+    // Resize
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 1000);
+
+    window.addEventListener('resize', debouncedHandleResize);
+    return () => {
+      window.removeEventListener('resize', debouncedHandleResize);
+    };
   });
 
   // When user scrolls with the mouse, we have to change slides

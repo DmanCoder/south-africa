@@ -18,12 +18,6 @@
       @content;
     }
   }
-
-  @if $breakpoint == '>=desktop--lg' {
-    @media (min-width: 90em) {
-      @content;
-    }
-  }
 }
 
 /* ============================================
