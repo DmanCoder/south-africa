@@ -59,9 +59,15 @@ const prevSlideAnimations = (slideIndex) => {
             // delay: -4.5,
             duration: 0.8,
             opacity: 0,
+            onComplete: () =>
+              gsap.set(['.info-child-stagger'], {
+                delay: 0.8,
+                clearProps: 'all',
+              }),
           },
           'start-nav'
         );
+
       break;
     default:
       break;
