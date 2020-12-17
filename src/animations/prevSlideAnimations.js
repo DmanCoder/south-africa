@@ -23,7 +23,7 @@ const prevSlideAnimations = (slideIndex) => {
         .to(
           ['.nav-side__title', '.banner-text__btn-back'],
           {
-            css: { opacity: 0, x: 20 },
+            css: { opacity: 0, css: { left: '50%' } },
           },
           'start-nav'
         )

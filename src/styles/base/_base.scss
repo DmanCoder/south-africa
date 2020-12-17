@@ -8,6 +8,14 @@
 
 html {
   font-size: 62.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
+
+  @include mediaQ('>=desktop') {
+    font-size: 55%;
+  }
+
+  @include mediaQ('>=monitor') {
+    font-size: 62.5%; // DEFINES WHAT 1 REM IS E.G. 1REM === 10PX
+  }
 }
 
 body {

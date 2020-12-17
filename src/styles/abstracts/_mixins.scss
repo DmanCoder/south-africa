@@ -18,6 +18,12 @@
       @content;
     }
   }
+
+  @if $breakpoint == '>=monitor' {
+    @media (min-width: 120em) {
+      @content;
+    }
+  }
 }
 
 /* ============================================

@@ -43,15 +43,26 @@ const App = () => {
   let slideRec1 = useRef(null);
   let slideWelcome = useRef(null);
   let slideRec2 = useRef(null);
+  let slides = [{}];
+  if (dimensions.width >= 1026 && dimensions.width < 1800) {
+    slides = [
+      { el: slideBanner, offset: 0, delay: 0 },
+      { el: slideInfo, offset: 100, delay: 0.8 },
+      { el: slideRec1, offset: 140, delay: 0 },
+      { el: slideWelcome, offset: 0, delay: 0 },
+      { el: slideRec2, offset: 140, delay: 0 },
+    ];
+  }
 
-  // Slides Array
-  const slides = [
-    { el: slideBanner, offset: 0, delay: 0 },
-    { el: slideInfo, offset: 200, delay: 0.8 },
-    { el: slideRec1, offset: 200, delay: 0 },
-    { el: slideWelcome, offset: 0, delay: 0 },
-    { el: slideRec2, offset: 180, delay: 0 },
-  ];
+  if (dimensions.width > 1800) {
+    slides = [
+      { el: slideBanner, offset: 0, delay: 0 },
+      { el: slideInfo, offset: 200, delay: 0.8 },
+      { el: slideRec1, offset: 200, delay: 0 },
+      { el: slideWelcome, offset: 0, delay: 0 },
+      { el: slideRec2, offset: 180, delay: 0 },
+    ];
+  }
 
   // Animation state
   let isAnimating = false;
