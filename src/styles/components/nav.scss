@@ -128,10 +128,7 @@
 
   &__title {
     @include mediaQ('>=desktop') {
-      display: none;
-    }
-
-    @include mediaQ('>=monitor') {
+      // display: none;
       display: block;
       font-size: 11rem;
       margin: 0;
@@ -143,8 +140,26 @@
       position: absolute;
       width: 100%;
       white-space: nowrap;
-      @include centerElement($lt: 80%, $tp: 48%);
+      @include centerElement($lt: 80%, $tp: 52%);
       transform: rotate(-90deg);
+    }
+
+    @include mediaQ('>=monitor') {
+      // display: block;
+      // font-size: 11rem;
+      // margin: 0;
+      // color: white;
+      // font-size: 11rem;
+      // align-items: flex-start;
+      // top: -30rem;
+      // left: -28rem;
+      // position: absolute;
+      // width: 100%;
+      // white-space: nowrap;
+      // @include centerElement($lt: 80%, $tp: 48%);
+      // transform: rotate(-90deg);
+
+      top: 48%;
     }
   }
 }
