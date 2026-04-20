@@ -3,21 +3,16 @@
  * @param  {Function} callback The function to run after scrolling
  */
 
-import { isFirefox } from '../utils/checkBrowser';
-
 const scrollStop = (callback) => {
   // Make sure a valid callback was provided
   if (!callback || typeof callback !== 'function') return;
 
   // Setup scrolling variable
-  var isScrolling;
-
-  // Event type
-  const eventType = !isFirefox ? 'mousewheel' : 'DOMMouseScroll';
+  let isScrolling;
 
   // Listen for scroll events
   window.addEventListener(
-    eventType,
+    'wheel',
     (event) => {
       // Clear our timeout throughout the scroll
       window.clearTimeout(isScrolling);
@@ -28,7 +23,7 @@ const scrollStop = (callback) => {
         callback(event);
       }, 400);
     },
-    false
+    { passive: true }
   );
 };
 

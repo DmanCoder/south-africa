@@ -173,8 +173,12 @@
   text-align: center;
   margin-top: 8rem;
   @include mediaQ('>=desktop') {
-    margin-top: 20rem;
-    margin-bottom: 20rem;
+    min-height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
   }
 
@@ -342,7 +346,11 @@
 
   @include mediaQ('>=desktop') {
     text-align: left;
-    margin-top: 20rem;
+    min-height: 100vh;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__img-container {

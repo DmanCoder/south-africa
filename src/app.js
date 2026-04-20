@@ -44,23 +44,13 @@ const App = () => {
   let slideWelcome = useRef(null);
   let slideRec2 = useRef(null);
   let slides = [{}];
-  if (dimensions.width >= 1026 && dimensions.width < 1800) {
+  if (dimensions.width >= 1026) {
     slides = [
       { el: slideBanner, offset: 0, delay: 0 },
-      { el: slideInfo, offset: 100, delay: 0.8 },
-      { el: slideRec1, offset: 140, delay: 0 },
+      { el: slideInfo, offset: 0, delay: 0.8 },
+      { el: slideRec1, offset: 0, delay: 0 },
       { el: slideWelcome, offset: 0, delay: 0 },
-      { el: slideRec2, offset: 140, delay: 0 },
-    ];
-  }
-
-  if (dimensions.width > 1800) {
-    slides = [
-      { el: slideBanner, offset: 0, delay: 0 },
-      { el: slideInfo, offset: 200, delay: 0.8 },
-      { el: slideRec1, offset: 200, delay: 0 },
-      { el: slideWelcome, offset: 0, delay: 0 },
-      { el: slideRec2, offset: 180, delay: 0 },
+      { el: slideRec2, offset: 0, delay: 0 },
     ];
   }
 
@@ -99,19 +89,15 @@ const App = () => {
 
   // When user scrolls with the mouse, we have to change slides
   const handleOnMouseWheel = (event) => {
-    // Normalize event wheel delta
-    const delta = event.wheelDelta / 30 || -event.detail;
+    // wheel event: deltaY > 0 means scrolling down, < 0 means up
+    const delta = event.deltaY;
 
-    // If the user scrolled up, it goes to previous slide, otherwise - to next slide
-    if (delta < -1) {
-      // Go to next slide
+    // If the user scrolled down, go to next slide; up, go to previous
+    if (delta > 1) {
       handleGoToNextSlide();
-    } else if (delta > 1) {
-      // Go to previous slide
+    } else if (delta < -1) {
       handleGoToPrevSlide();
     }
-
-    event.preventDefault(event);
   };
 
   const handleGoToNextSlide = () => {
